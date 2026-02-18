@@ -98,7 +98,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text('Despesas Pessoais'),
+      title: Text(
+        'Despesas Pessoais',
+        style: TextStyle(fontSize: MediaQuery.textScalerOf(context).scale(20)),
+      ),
       actions: [
         IconButton(
           onPressed: () => _openTransactionFormModal(context),
@@ -118,11 +121,11 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
-              height: availableHeight * 0.3,
+              height: availableHeight * 0.25,
               child: Chart(recentTransactions: _recentTransactions),
             ),
             SizedBox(
-              height: availableHeight * 0.7,
+              height: availableHeight * 0.75,
               child: TransactionList(
                 transactions: _transactions,
                 onRemove: _removeTransaction,
