@@ -1,21 +1,42 @@
 import 'package:expenses/components/adaptative_button.dart';
 import 'package:expenses/components/adaptative_date_picker.dart';
 import 'package:expenses/components/adaptative_text_field.dart';
+import 'package:expenses/models/transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionForm extends StatefulWidget {
-  TransactionForm({super.key, required this.onSubmit});
+  const TransactionForm({super.key, required this.onSubmit, this.transaction});
 
   final void Function(String, double, DateTime) onSubmit;
+  final Transaction? transaction;
 
   @override
   State<TransactionForm> createState() => _TransactionFormState();
 }
 
 class _TransactionFormState extends State<TransactionForm> {
-  final _titleController = TextEditingController();
-  final _valueController = TextEditingController();
-  DateTime? _selectedDate = DateTime.now();
+  late TextEditingController _titleController;
+  late TextEditingController _valueController;
+  late DateTime? _selectedDate;
+
+  @override
+  void initState() {
+    super.initState();
+    _titleController = TextEditingController(
+      text: widget.transaction?.title ?? '',
+    );
+    _valueController = TextEditingController(
+      text: widget.transaction?.value.toString() ?? '',
+    );
+    _selectedDate = widget.transaction?.date ?? DateTime.now();
+  }
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _valueController.dispose();
+    super.dispose();
+  }
 
   _submitForm() {
     final title = _titleController.text;
@@ -66,7 +87,9 @@ class _TransactionFormState extends State<TransactionForm> {
                 children: [
                   AdaptativeButton(
                     onPressed: _submitForm,
-                    label: 'Nova Transação',
+                    label: widget.transaction != null
+                        ? 'Atualizar Transação'
+                        : 'Nova Transação',
                   ),
                 ],
               ),

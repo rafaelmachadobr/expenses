@@ -7,10 +7,12 @@ class TransactionList extends StatelessWidget {
     super.key,
     required this.transactions,
     required this.onRemove,
+    required this.onEdit,
   });
 
   final List<Transaction> transactions;
   final void Function(String) onRemove;
+  final void Function(Transaction) onEdit;
 
   @override
   Widget build(BuildContext context) {
@@ -62,20 +64,45 @@ class TransactionList extends StatelessWidget {
                     style: TextStyle(color: Colors.grey),
                   ),
                   trailing: MediaQuery.of(context).size.width > 480
-                      ? TextButton.icon(
-                          onPressed: () => onRemove(tr.id),
-                          icon: Icon(Icons.delete),
-                          label: Text('Excluir'),
-                          style: TextButton.styleFrom(
-                            foregroundColor: Theme.of(
-                              context,
-                            ).colorScheme.error,
-                          ),
+                      ? Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextButton.icon(
+                              onPressed: () => onEdit(tr),
+                              icon: Icon(Icons.edit),
+                              label: Text('Editar'),
+                              style: TextButton.styleFrom(
+                                foregroundColor: Theme.of(
+                                  context,
+                                ).colorScheme.primary,
+                              ),
+                            ),
+                            TextButton.icon(
+                              onPressed: () => onRemove(tr.id),
+                              icon: Icon(Icons.delete),
+                              label: Text('Excluir'),
+                              style: TextButton.styleFrom(
+                                foregroundColor: Theme.of(
+                                  context,
+                                ).colorScheme.error,
+                              ),
+                            ),
+                          ],
                         )
-                      : IconButton(
-                          icon: Icon(Icons.delete),
-                          color: Theme.of(context).colorScheme.error,
-                          onPressed: () => onRemove(tr.id),
+                      : Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.edit),
+                              color: Theme.of(context).colorScheme.primary,
+                              onPressed: () => onEdit(tr),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.delete),
+                              color: Theme.of(context).colorScheme.error,
+                              onPressed: () => onRemove(tr.id),
+                            ),
+                          ],
                         ),
                 ),
               );

@@ -83,17 +83,39 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).pop();
   }
 
+  _editTransaction(String id, String title, double value, DateTime date) {
+    final index = _transactions.indexWhere((tr) => tr.id == id);
+    if (index >= 0) {
+      setState(() {
+        _transactions[index] = Transaction(
+          id: id,
+          title: title,
+          value: value,
+          date: date,
+        );
+      });
+
+      Navigator.of(context).pop();
+    }
+  }
+
   _removeTransaction(String id) {
     setState(() {
       _transactions.removeWhere((tr) => tr.id == id);
     });
   }
 
-  _openTransactionFormModal(BuildContext context) {
+  _openTransactionFormModal(BuildContext context, {Transaction? transaction}) {
     showModalBottomSheet(
       context: context,
       builder: (_) {
-        return TransactionForm(onSubmit: _addTransaction);
+        return TransactionForm(
+          onSubmit: transaction != null
+              ? (title, value, date) =>
+                    _editTransaction(transaction.id, title, value, date)
+              : _addTransaction,
+          transaction: transaction,
+        );
       },
     );
   }
@@ -179,6 +201,10 @@ class _HomePageState extends State<HomePage> {
                 child: TransactionList(
                   transactions: _transactions,
                   onRemove: _removeTransaction,
+                  onEdit: (transaction) => _openTransactionFormModal(
+                    context,
+                    transaction: transaction,
+                  ),
                 ),
               ),
           ],
