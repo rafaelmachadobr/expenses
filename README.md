@@ -91,12 +91,12 @@ dev_dependencies:
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="./screens/screen_01.png" alt="Tela 1" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
-  <img src="./screens/screen_02.png" alt="Tela 2" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
-  <img src="./screens/screen_03.png" alt="Tela 3" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
-  <img src="./screens/screen_04.png" alt="Tela 4" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
-  <img src="./screens/screen_05.png" alt="Tela 5" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
-  <img src="./screens/screen_06.png" alt="Tela 6" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <img src="./screens/screen_01.png" alt="Tela 1" width="250"/>
+  <img src="./screens/screen_02.png" alt="Tela 2" width="250"/>
+  <img src="./screens/screen_03.png" alt="Tela 3" width="250"/>
+  <img src="./screens/screen_04.png" alt="Tela 4" width="250"/>
+  <img src="./screens/screen_05.png" alt="Tela 5" width="250"/>
+  <img src="./screens/screen_06.png" alt="Tela 6" width="250"/>
 </div>
 
 ## 🎨 Recursos Visuais
