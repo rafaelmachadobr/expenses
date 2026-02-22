@@ -9,9 +9,10 @@ O **Expenses** é uma aplicação mobile desenvolvida em Flutter para ajudar voc
 ## ✨ Funcionalidades
 
 - ✅ **Adicionar Transações**: Registre suas despesas com título, valor e data
+- ✏️ **Editar Transações**: Modifique título, valor e data de transações já cadastradas
 - 📊 **Gráfico Semanal**: Visualize suas despesas dos últimos 7 dias em um gráfico de barras intuitivo
-- 📝 **Lista de Transações**: Veja todas as suas transações organizadas com data e valor
-- 🗑️ **Remover Transações**: Delete transações com um simples deslizar
+- 📋 **Lista de Transações**: Veja todas as suas transações organizadas com data e valor
+- 🗑️ **Remover Transações**: Delete transações com um simples clique
 - 🇧🇷 **Localização PT-BR**: Interface completamente em português do Brasil
 - 🎨 **Design Personalizado**: Interface moderna com tema roxo e âmbar
 
@@ -86,6 +87,17 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^5.0.0 # Linting e boas práticas
 ```
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="./screens/screen_01.png" alt="Tela 1" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <img src="./screens/screen_02.png" alt="Tela 2" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <img src="./screens/screen_03.png" alt="Tela 3" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <img src="./screens/screen_04.png" alt="Tela 4" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <img src="./screens/screen_05.png" alt="Tela 5" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <img src="./screens/screen_06.png" alt="Tela 6" width="250" style="border-radius: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+</div>
 
 ## 🎨 Recursos Visuais
 
