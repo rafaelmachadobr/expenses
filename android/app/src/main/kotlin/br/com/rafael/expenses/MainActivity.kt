@@ -1,4 +1,4 @@
-package com.example.expenses
+package br.com.rafael.expenses
 
 import io.flutter.embedding.android.FlutterActivity
 
