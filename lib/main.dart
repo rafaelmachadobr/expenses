@@ -25,17 +25,17 @@ class ExpensesApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
         textTheme: tema.textTheme.copyWith(
-          titleLarge: TextStyle(
+          titleLarge: const TextStyle(
             fontFamily: 'OpenSans',
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.purple,
           foregroundColor: Colors.white,
           titleTextStyle: TextStyle(
-            fontFamily: "OpenSans",
+            fontFamily: 'OpenSans',
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -221,10 +221,10 @@ class _HomePageState extends State<HomePage> {
             appBar: appBar,
             body: bodyPage,
             floatingActionButton: Platform.isIOS
-                ? Container()
+                ? const SizedBox()
                 : FloatingActionButton(
                     onPressed: () => _openTransactionFormModal(context),
-                    child: Icon(Icons.add, color: Colors.black),
+                    child: const Icon(Icons.add, color: Colors.black),
                   ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerFloat,

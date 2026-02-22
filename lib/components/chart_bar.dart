@@ -30,10 +30,15 @@ class ChartBar extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey, width: 1.0),
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        top: BorderSide(color: Colors.grey, width: 1.0),
+                        left: BorderSide(color: Colors.grey, width: 1.0),
+                        right: BorderSide(color: Colors.grey, width: 1.0),
+                        bottom: BorderSide(color: Colors.grey, width: 1.0),
+                      ),
                       color: Color.fromRGBO(220, 220, 220, 1),
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
                   ),
                   FractionallySizedBox(

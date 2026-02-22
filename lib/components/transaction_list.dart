@@ -21,12 +21,12 @@ class TransactionList extends StatelessWidget {
             builder: (ctx, constraints) {
               return Column(
                 children: [
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text(
                     'Nenhuma Transação Cadastrada',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: constraints.maxHeight * 0.6,
                     child: Image.asset(
@@ -44,14 +44,14 @@ class TransactionList extends StatelessWidget {
               final tr = transactions[index];
               return Card(
                 elevation: 5,
-                margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     foregroundColor: Theme.of(context).colorScheme.onPrimary,
                     radius: 30,
                     child: Padding(
-                      padding: EdgeInsets.all(6),
+                      padding: const EdgeInsets.all(6),
                       child: FittedBox(child: Text('R\$${tr.value}')),
                     ),
                   ),
@@ -61,7 +61,7 @@ class TransactionList extends StatelessWidget {
                   ),
                   subtitle: Text(
                     DateFormat("d 'de' MMM 'de' y").format(tr.date),
-                    style: TextStyle(color: Colors.grey),
+                    style: const TextStyle(color: Colors.grey),
                   ),
                   trailing: MediaQuery.of(context).size.width > 480
                       ? Row(
@@ -69,8 +69,8 @@ class TransactionList extends StatelessWidget {
                           children: [
                             TextButton.icon(
                               onPressed: () => onEdit(tr),
-                              icon: Icon(Icons.edit),
-                              label: Text('Editar'),
+                              icon: const Icon(Icons.edit),
+                              label: const Text('Editar'),
                               style: TextButton.styleFrom(
                                 foregroundColor: Theme.of(
                                   context,
@@ -79,8 +79,8 @@ class TransactionList extends StatelessWidget {
                             ),
                             TextButton.icon(
                               onPressed: () => onRemove(tr.id),
-                              icon: Icon(Icons.delete),
-                              label: Text('Excluir'),
+                              icon: const Icon(Icons.delete),
+                              label: const Text('Excluir'),
                               style: TextButton.styleFrom(
                                 foregroundColor: Theme.of(
                                   context,
@@ -93,12 +93,12 @@ class TransactionList extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             IconButton(
-                              icon: Icon(Icons.edit),
+                              icon: const Icon(Icons.edit),
                               color: Theme.of(context).colorScheme.primary,
                               onPressed: () => onEdit(tr),
                             ),
                             IconButton(
-                              icon: Icon(Icons.delete),
+                              icon: const Icon(Icons.delete),
                               color: Theme.of(context).colorScheme.error,
                               onPressed: () => onRemove(tr.id),
                             ),
